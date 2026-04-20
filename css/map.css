@@ -1,0 +1,8 @@
+.nav-bar {
+    position: fixed;
+}
+
+.map-container iframe{
+    width: 80%;
+    height: 700px;
+}
