@@ -1,0 +1,99 @@
+:root {
+    --navBar-color: #131313c6;
+    --golden-color: #e7c075;
+    --golden-hover-color: #bb954f;
+    --golden-btn-text-color: #432f01;
+    --text-color: #a4a2a8;
+    --small-text-color: #b5aa9b;
+}
+
+main {
+    padding: 20px 40px;
+}
+
+.search-header {
+    color: var(--text-color);
+    font-size: 40px;
+    margin-left: 16%;
+    margin-bottom: 12px;
+}
+
+.search-window {
+    display: flex;
+    justify-content: center;
+}
+
+.search-window input {
+    height: 42px;
+    background-color: #353534;
+    border: none;
+    width: 60%;
+    font-size: 16px;
+    padding: 5px;
+    color: white;
+}
+
+.search-window input:focus {
+    outline: none;
+    border: 1px solid white;
+}
+
+.search-window button {
+    width: 8%;
+    background-color: var(--golden-color);
+    cursor: pointer;
+}
+.search-window button:hover{
+    background-color: var(--golden-hover-color);
+}
+
+.search-filters {
+    display: flex;
+    justify-content: space-between ;
+    margin: 0 16%;
+    margin-top: 15px;
+}
+
+.filter-era,
+.filter-region,
+.filter-musuem{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 20%;
+}
+label{
+    color: var(--golden-color);
+}
+select{
+    background-color: #353534 ;
+    color: white;
+    height: 38px;
+}
+select option:hover{
+    background-color:var(--golden-hover-color) !important ;
+}
+
+.filter-method{
+    display: flex;
+    height: 38px;
+    width: 20%;
+    background-color:  #353534;
+    align-self: flex-end;
+    border: 1px solid rgb(123, 123, 123);
+    align-items: center;
+}
+
+.filter-method button{
+    background-color: transparent;
+    border: transparent;
+    height: 37px;
+    width: 50%;
+    cursor: pointer;
+    color: white;
+}
+
+.active-method{
+    background-color: var(--golden-color) !important;
+    color: var(--golden-btn-text-color) !important;
+}
