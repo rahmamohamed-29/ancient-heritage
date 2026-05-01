@@ -1,23 +1,26 @@
 :root {
     --black: #000;
     --navBar-color-dark: #131313e6;
-    --navBar-color-light: #fef8efe6;
+    --navBar-color-light: #f2ede4cc;
     --background-dark: #0a0a0a;
-    --background-light: #f8f2ea;
+    --background-light: #f2ede4;
     --golden-color: #e7c075;
     --golden-hover-color: #bb954f;
-    --golden-btn-text-color: #432f01;
     --text-dark: #a4a2a8;
-    --text-light: #4e4635;
     --active-text: rgb(152, 120, 34);
+    --text-light: #6B4F3A;
+    --big-text-light: #3E2F23;
     --active-text: #987822;
-    --big-text-light: #2b240a;
     --small-text-dark: #b5aa9b;
-    --footer-light: #e8d9ac;
-    --button-light: #765700;
     --card-background-color: #353534;
     --container-color-light: #fdedbf;
     --container-second-light: #383010;
+    --button-light: #937C63;
+    --button-hover-light: #7D6852;
+    --footer-light: #f2ede4;
+    --container-color-light: #F9F3E5;
+    --container-second-light: #383010;
+    --information-cnt: #181818;
 }
 
 @font-face {
@@ -32,8 +35,8 @@
 
 #map-iframe {
     border: none;
-    width: 70vw;
-    height: 130%;
+    width: 80vw;
+    height: 148.5%;
     border-radius: 15px;
     margin-top: 20px;
     transition: 0.4s;
@@ -54,29 +57,30 @@
 }
 
 #map-container {
-    margin-bottom: 12%;
-    transition: 0.6s;
+    margin-bottom: 20%;
+    transition: 0.5s;
     height: 83vh;
     margin-right: 0;
 }
 
 #map-container.selected {
     margin-right: 30%;
+    margin-bottom: 10%;
 }
 
 #information-container {
     position: absolute;
     top: 0;
     right: -100vw;
+    height: 103%;
     width: fit-content;
     display: flex;
     flex-direction: column;
-    transition: 0.6s;
-    background-color: #181818;
+    transition: 0.4s;
+    background-color: var(--information-cnt) ;
     align-items: center;
     padding: 0 50px;
     padding-top: 20px;
-    padding-bottom: 12.4%;
 }
 
 #information-container.selected {
@@ -95,7 +99,7 @@
 }
 
 #information-container .p1.light {
-    color: var(--active-text);
+    color: #8C6239;
 }
 
 #information-container .p2 {
@@ -107,7 +111,7 @@
 }
 
 #information-container .p2.light {
-    color: var(--big-text-light);
+    color: #1A1A1A;
 }
 
 #img {
@@ -131,6 +135,7 @@
     font-size: 18px;
     padding: 0;
     text-align: center;
+    transition: 0.4s;
 }
 
 #selected-info.light {
@@ -145,6 +150,11 @@
     font-family: bold-font;
     font-size: 13px;
     color: #87724b;
+    transition: 0.4s;
+}
+
+#selected-info label.light {
+    color: #8D4925;
 }
 
 #info-p{
@@ -154,8 +164,9 @@
     font-size: 18px;
     text-align: center;
     padding-top: 30px;
+    transition: 0.4s;
 }
 
 #info-p.light {
-    color: var(--golden-btn-text-color);
+    color: #5c5c5c;
 }

@@ -1,12 +1,22 @@
 let current = null; //مكان لتخزين قيمة الصورة المضغوطة
 let cnt = document.getElementById("information-container");
 let iframe = document.getElementById("map-iframe");
+const sounds = {
+    "pyramid": new Audio("../assets/audios/pyramid.MP3"),
+    "siwa": new Audio("../assets/audios/siwa.MP3"),
+    "bahariya": new Audio("../assets/audios/bahariya.MP3"),
+    "farafra": new Audio("../assets/audios/farafra.MP3"),
+    "dakhla": new Audio("../assets/audios/dakhla.MP3"),
+    "kharga": new Audio("../assets/audios/kharga.MP3"),
+    "abu-simbel": new Audio("../assets/audios/abu-simbel.MP3"),
+    "karnak": new Audio("../assets/audios/karnak.MP3")
+};
 function mapMod() {
     let imgs = iframe.contentDocument.querySelectorAll("#icons-container img");
     let p = iframe.contentDocument.querySelectorAll("#icons-container p");
     let map = iframe.contentDocument.getElementById("map");
     let btn = iframe.contentDocument.querySelectorAll("#zoom-btn button");
-    btn.forEach(e=>{
+    btn.forEach(e => {
         e.classList.toggle("light");
     });
     cnt.classList.toggle("light");
@@ -328,23 +338,32 @@ function selected(value) {
             e.classList.toggle("active");
         }
     });
+    if (infoCnt.classList.contains("selected") || current !== value) {
+        sounds[value].play();
+    }
 }
 
 //------------------------------------------------------------------------------------------------------------------------------
 let observer = new MutationObserver(() => {
     if (cnt.classList.contains("light")) {
-    window.parent.document.querySelector(".p1").classList.add("light");
-    window.parent.document.querySelector(".p2").classList.add("light");
-    window.parent.document.getElementById("img").classList.add("light");
-    window.parent.document.getElementById("selected-info").classList.add("light");
-    window.parent.document.getElementById("info-p").classList.add("light");
-}
-else {
-    window.parent.document.querySelector(".p1").classList.remove("light");
-    window.parent.document.querySelector(".p2").classList.remove("light");
-    window.parent.document.getElementById("img").classList.remove("light");
-    window.parent.document.getElementById("selected-info").classList.remove("light");
-    window.parent.document.getElementById("info-p").classList.remove("light");
+        window.parent.document.querySelector(".p1").classList.add("light");
+        window.parent.document.querySelector(".p2").classList.add("light");
+        window.parent.document.getElementById("img").classList.add("light");
+        window.parent.document.getElementById("selected-info").classList.add("light");
+        window.parent.document.getElementById("info-p").classList.add("light");
+        document.querySelectorAll("#selected-info label").forEach(e => {
+        e.classList.add("light");
+    });
+    }
+    else {
+        window.parent.document.querySelector(".p1").classList.remove("light");
+        window.parent.document.querySelector(".p2").classList.remove("light");
+        window.parent.document.getElementById("img").classList.remove("light");
+        window.parent.document.getElementById("selected-info").classList.remove("light");
+        window.parent.document.getElementById("info-p").classList.remove("light");
+        document.querySelectorAll("#selected-info label").forEach(e => {
+        e.classList.remove("light");
+    });
     }
 });
 observer.observe(window.parent.document.getElementById("information-container"), {
@@ -366,7 +385,7 @@ function zoomIn() {
     if (scale < max_scale) { //عشان ميعملش زوم اكتر من 3
         map.style.scale = scale + add;
     }
-    if (parseFloat(map.style.scale) > normal_scale){
+    if (parseFloat(map.style.scale) > normal_scale) {
         document.body.classList.add("grap");
     }
 }
@@ -376,7 +395,7 @@ function zoomout() {
     if (scale > normal_scale) { //عشان ميصغرش عن 1
         map.style.scale = scale - add;
     }
-    if (parseFloat(map.style.scale) === normal_scale){
+    if (parseFloat(map.style.scale) === normal_scale) {
         document.body.classList.remove("grap");
     }
 }
