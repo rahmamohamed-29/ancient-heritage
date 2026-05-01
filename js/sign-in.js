@@ -83,9 +83,9 @@
 
 
 function clearM(index) {
-  let errorM = document.getElementsByClassName("error");
-  let successM = document.getElementsByClassName("success");
-  let input = document.getElementsByTagName("input");
+   let errorM = document.getElementsByClassName("error");
+   let successM = document.getElementsByClassName("success");
+   let input = document.getElementsByTagName("input");
    input[index].classList.remove("E");
    errorM[index].innerText = "";
 }
@@ -98,12 +98,13 @@ function inMod() {
           ".form-link .sign",
     ];
 
-    elementsToToggle.forEach(selector => {
-        const el = document.querySelector(selector);
-        if (el) { 
-            el.classList.toggle("light");
-        }
-    });
+   const groups = [".form-link a", "div label", "div input", ".icon", ".sign-in .Q", ".sign-in .Q a"];
+   groups.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+         el.classList.toggle("light");
+      });
+   });
+}
 
     const groups = [ "div label", "div input" , ".sign-in p", ".Q a", ".icon"];
     groups.forEach(selector => {
