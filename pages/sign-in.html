@@ -103,7 +103,10 @@
                     </div>
                     <div>
                         <label for="p">PASSWORD:</label>
-                        <input id="p" type="password" name="Password" placeholder="••••••••" onfocus="clearM(1)" onblur="password()">
+                        <div class="box">
+                        <input id="p" type="password" name="Password" placeholder="••••••••" onfocus="clearM(1)" onblur="password()" > 
+                        <i class="fa-regular fa-eye-slash" style="color: var(--small-text-dark);"> </i> 
+                        </div>
                         <h6 class="error"></h6>
                         <!-- <h6 class="success"></h6> -->
                     </div>

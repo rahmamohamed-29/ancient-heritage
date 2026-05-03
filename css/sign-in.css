@@ -216,6 +216,14 @@ div input {
     transition: 0.2s;
     width: 100%;
 }
+.box{
+    position: relative;
+}
+.box i{
+    position: absolute;
+    
+    
+}
 div input.light{
    background-color: var(--background-light);
    color: var(--text-light);

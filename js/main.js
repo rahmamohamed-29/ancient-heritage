@@ -1,13 +1,23 @@
+let storeData = localStorage.getItem("user")
+let userData = JSON.parse(storeData);
 let log = JSON.parse(localStorage.getItem("log"));
 let Button = document.getElementById("sign-btn");
 let Icon = document.getElementById("icon");
-if (log) {
+if(!user && !log){
     Icon.style.display = "none";
     Button.style.display = "block";
-} else {
+} 
+else if(log){
     Icon.style.display = "block";
     Button.style.display = "none";
 }
+// if (!log) {
+//     Icon.style.display = "none";
+//     Button.style.display = "block";
+// } else {
+//     Icon.style.display = "block";
+//     Button.style.display = "none";
+// }
 
 function changeMod() {
     document.querySelector(".mode-cnt").classList.toggle("light");
