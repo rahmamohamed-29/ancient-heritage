@@ -1,6 +1,6 @@
 let head = document.querySelector(".heading h1");
 let cards = document.querySelectorAll(".card-container");
-function museumMod(){
+function museumMod() {
     head.classList.toggle("light");
     document.querySelector(".heading p").classList.toggle("light");
     document.querySelector(".heading span").classList.toggle("light");
