@@ -19,8 +19,15 @@
     --container-color-light: #fdedbf;
     --container-second-light: #383010;
 }
+<<<<<<< Updated upstream
 
 .a{
+=======
+body{
+    cursor: default;
+}
+.a {
+>>>>>>> Stashed changes
     position: relative;
     display: flex;
     flex-direction: row;

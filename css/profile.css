@@ -26,6 +26,7 @@ body{
     text-transform: capitalize;
     font-family: mainFont;
     display: flex;
+    cursor: default;
 }
 .head,main{
     display: flex;
@@ -241,7 +242,6 @@ a{
     }
     h2{
         color: var(--button-light);
-        /* text-shadow: 0px 0px 5px var(--container-second-light); */
     }
 }
 .cardFooter.light{
@@ -290,6 +290,7 @@ hr.light{
             }
     }
 }
+<<<<<<< Updated upstream
 /* @media (max-width = 567px) {
     .head,main{
         padding: 0.5%;
@@ -347,3 +348,6 @@ hr.light{
         }
     }
 } */
+=======
+
+>>>>>>> Stashed changes
